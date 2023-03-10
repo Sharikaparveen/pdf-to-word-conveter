@@ -68,19 +68,19 @@ app.get('/download', (req,res) =>{
   res.download(__dirname +`/upload/${down_name}${extend_pdf}`,`${down_name}${extend_pdf}`,(err) =>{
     if(err){
       res.send(err);
-    }else{
-      //Delete the files from directory after the use
-      console.log('Files deleted');
-      const delete_path_doc = process.cwd() + `/upload/${down_name}${extend_docx}`;
-      const delete_path_pdf = process.cwd() + `/upload/${down_name}${extend_pdf}`;
-      try {
-        fs.unlinkSync(delete_path_doc)
-        fs.unlinkSync(delete_path_pdf)
-        //file removed
-      } catch(err) {
-      console.error(err)
-      }
-    }
+//     }else{
+//       //Delete the files from directory after the use
+//       console.log('Files deleted');
+//       const delete_path_doc = process.cwd() + `/upload/${down_name}${extend_docx}`;
+//       const delete_path_pdf = process.cwd() + `/upload/${down_name}${extend_pdf}`;
+//       try {
+//         fs.unlinkSync(delete_path_doc)
+//         fs.unlinkSync(delete_path_pdf)
+//         //file removed
+//       } catch(err) {
+//       console.error(err)
+//       }
+//     }
   })
 })
 
